@@ -20,6 +20,12 @@ class Main extends PluginBase implements Listener{
   }
   
   public function GmUI($player){
+    if ($player instanceof Player){
+      if ($this->getServer()->getPluginManager()->getPlugin() == "FormAPI"){
+      } else {
+        $player->sendMessage("§7§l»§r§4FormAPI plugin not found");
+      }
+    }
   }
   
   public function onCommand(CommandSender $player, Command $cmd, string $label, array $args): bool{
