@@ -1,6 +1,8 @@
 <?php
 /**
  * GmUI Created by TheBlitzCode
+ * Twitter: THeBlitzCode
+ * this pluig is for GhostRide
 */
 
 namespace TheBlitzCode;
@@ -11,12 +13,25 @@ use pocketmine\command\Command;
 use pocketmine\command\CommandSender;
 use pocketmine\event\Listener;
 use pocketmine\event\PlayerJoinEvent;
+use pocketmine\utils\Config;
 
 class Main extends PluginBase implements Listener{
   public function onEnable(){
+    $this->getServer()->getPluginManager()->registerEvents($this, $this);
+    $this->getServer()->info(base64_decode("R21VSSBFbmFibGVkIHN1Y2Nlc3NmdWxseQ=="));
+    $this->getLogger()->notice(base64_decode("R21VSSBjcmVhdGVkIGJ5IFRoZUJsaXR6Q29kZQ=="));
+    @mkdir($this->getDataFolder());
+    $this->saveDefaultConfig();
   }
   
   public function onDisable(){
+  }
+  
+  public function onJoin(PlayerJoinEvent $event){
+    $player = $event->getPlayer();
+    if ($player instanceof Player){
+      $player->setGamemode(0);
+    }
   }
   
   public function GmUI($player){
@@ -37,6 +52,11 @@ class Main extends PluginBase implements Listener{
       }
     }
     retuen false;
+  }
+  
+  public function gamemodes($player){
+    if ($player instanceof Player){
+    }
   }
 }
 ?>
