@@ -1,7 +1,7 @@
 <?php
 /**
  * GmUI Created by TheBlitzCode
- * Twitter: THeBlitzCode
+ * Twitter: TheBlitzCode
  * this pluig is for GhostRide
 */
 
@@ -56,6 +56,9 @@ class Main extends PluginBase implements Listener{
   
   public function gamemodes($player){
     if ($player instanceof Player){
+      if ($player->getGamemode()  == 0){
+        $this->sendMessage("§7§l»§r§e
+      }
     }
   }
 }
